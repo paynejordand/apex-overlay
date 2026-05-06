@@ -1,0 +1,11 @@
+{
+	"settings": {
+        "cl_liveapi_use_v2": true,
+        "cl_liveapi_use_websocket": true,
+        "cl_liveapi_allow_requests": true,
+        "cl_liveapi_use_protobuf": false
+    },
+	"servers": [
+		"ws://127.0.0.1:7777"
+	]
+}

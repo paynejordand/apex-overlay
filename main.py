@@ -13,8 +13,8 @@ class App:
         self.root.title("Apex Legends Overlay")
         self.root.geometry("300x200")
         tk.Button(self.root, text="Start server", command=self.start_server_button, width=20).pack()
-        tk.Button(self.root, text="Show meds tracker", command=lambda: self.create_meds_display(self.base_image), width=20).pack()
-        tk.Button(self.root, text="Toggle respawn banner", command=lambda: self.create_respawn_banner(duration=0), width=20).pack()
+        tk.Button(self.root, text="Show meds", command=lambda: self.create_meds_display(self.base_image), width=20).pack()
+        tk.Button(self.root, text="Preview respawn banner", command=lambda: self.create_respawn_banner(duration=0), width=20).pack()
         self.meds_window = None
         self.respawn_window = None
         self.wss = WSServer(respawn_callback=self.create_respawn_banner)
@@ -31,7 +31,7 @@ class App:
         # Call async function
         tae.async_execute(self.start_server(), wait=False, master=self.root, 
                           show_progress_bar=False, window_title="Server Starting", 
-                          window_resizable=(True, True), show_stdout=False)
+                          window_resizable=(True, True), show_stdout=True)
 
     def update_counts(self):
         img = self.create_meds_image(self.base_image)
@@ -68,7 +68,7 @@ class App:
         self.meds_label = tk.Label(self.meds_window, image=img)
         self.meds_label.pack()
         self.meds_label.image = img
-        self.meds_window.after(1000, self.update_counts)
+        self.meds_window.after(100, self.update_counts)
 
     def create_respawn_banner(self, duration=5000, team="RAH", players=["Stink", "Monty"], fontSize=24, bg="#90EE90", fg="#000000"):
         if not self.respawn_window or not tk.Toplevel.winfo_exists(self.respawn_window):
