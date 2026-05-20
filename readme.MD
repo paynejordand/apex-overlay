@@ -16,16 +16,6 @@ Right click the game in your library and then click properties. You'll see a box
 
 `+cl_liveapi_enabled 1 +cl_liveapi_use_protobuf 0 +cl_liveapi_ws_servers "ws://127.0.0.1:7777"`
 
-#### Config file
-
-If you already have a lot of launch args you may need to use the config file for the liveapi specifics.
-
-To use the config file you need to include `+cl_liveapi_enabled 1` in your lauch options
-
-A config file with what you need is included in the releases. Place the file in the following folder (it doesn't matter where your game is installed, it reads from here).
-
-c:/Users/\<User>/Saved Games/Respawn/Apex/assets/temp/live_api/
-
 ## Running the overlay
 
 Running the program has 3 options. Customization options are coming soon :tm:
