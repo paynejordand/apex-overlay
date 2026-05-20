@@ -14,7 +14,7 @@ In order to use this you must be running apex on the same computer that is runni
 
 Right click the game in your library and then click properties. You'll see a box that says "Launch properties," copy and paste the following bit into that box.
 
-`+cl_liveapi_enabled 1 +cl_liveapi_ws_servers "ws://127.0.0.1:7777"`
+`+cl_liveapi_enabled 1 +cl_liveapi_use_protobuf 0 +cl_liveapi_ws_servers "ws://127.0.0.1:7777"`
 
 #### Config file
 
